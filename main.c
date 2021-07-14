@@ -31,11 +31,11 @@ int main(int argc, const char ** argv) {
   n3.value = 1970;
   n4.value = 1975;
 
-  head = &n4;
-  n4.next = &n3;
-  n3.next = &n2;
-  n2.next = &n1;
-  n1.next = NULL;
+  head = &n1;
+  n1.next = &n2;
+  n2.next = &n3;
+  n3.next = &n4;
+  n4.next = NULL;
 
   print_linked_list(head);
 
