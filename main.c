@@ -22,23 +22,38 @@ void print_linked_list(node_t * head) {
   printf("\n");
 }
 
+node_t * create_new_node(int value) {
+  node_t * new_node = malloc(sizeof(node_t));
+  (* new_node).value = value;
+  (* new_node).next = NULL;
+  return new_node;
+}
+
 
 int main(int argc, const char ** argv) {
-  node_t n1, n2, n3, n4;
   node_t * head;
+  node_t * tmp;
 
-  n1.value = 1960;
-  n2.value = 1965;
-  n3.value = 1970;
-  n4.value = 1975;
-
-  head = malloc(sizeof(node_t));
-  head->value = 0;
-  head->next = &n1;
-  n1.next = &n2;
-  n2.next = &n3;
-  n3.next = &n4;
-  n4.next = NULL;
+  tmp = create_new_node(2);
+  head = tmp;
+  tmp = create_new_node(4);
+  tmp->next = head;
+  head = tmp;
+  tmp = create_new_node(8);
+  tmp->next = head;
+  head = tmp;
+  tmp = create_new_node(16);
+  tmp->next = head;
+  head = tmp;
+  tmp = create_new_node(32);
+  tmp->next = head;
+  head = tmp;
+  tmp = create_new_node(64);
+  tmp->next = head;
+  head = tmp;
+  tmp = create_new_node(128);
+  tmp->next = head;
+  head = tmp;
 
   print_linked_list(head);
 
