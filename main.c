@@ -4,6 +4,7 @@
  * author: David Gaspar <davidgaspar.dev@gmail.com>
  */
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct node {
   /* data */
@@ -31,7 +32,9 @@ int main(int argc, const char ** argv) {
   n3.value = 1970;
   n4.value = 1975;
 
-  head = &n1;
+  head = malloc(sizeof(node_t));
+  head->value = 0;
+  head->next = &n1;
   n1.next = &n2;
   n2.next = &n3;
   n3.next = &n4;
