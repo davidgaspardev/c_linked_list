@@ -34,26 +34,11 @@ int main(int argc, const char ** argv) {
   node_t * head;
   node_t * tmp;
 
-  tmp = create_new_node(2);
-  head = tmp;
-  tmp = create_new_node(4);
-  tmp->next = head;
-  head = tmp;
-  tmp = create_new_node(8);
-  tmp->next = head;
-  head = tmp;
-  tmp = create_new_node(16);
-  tmp->next = head;
-  head = tmp;
-  tmp = create_new_node(32);
-  tmp->next = head;
-  head = tmp;
-  tmp = create_new_node(64);
-  tmp->next = head;
-  head = tmp;
-  tmp = create_new_node(128);
-  tmp->next = head;
-  head = tmp;
+  for(int i = 0; i < 50; i++) {
+    tmp = create_new_node(i);
+    tmp->next = head;
+    head = tmp;
+  }
 
   print_linked_list(head);
 
