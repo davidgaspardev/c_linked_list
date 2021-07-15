@@ -35,6 +35,18 @@ void insert_at_head(node_t ** head, node_t * new_head) {
   // return new_head;
 }
 
+void add_node(node_t * head, node_t * new_node) {
+  node_t * tmp = head;
+  while (tmp != NULL) {
+    if(tmp->next == NULL) {
+      tmp->next = new_node;
+      break;
+    } else {
+      tmp = tmp->next;
+    }
+  }
+}
+
 node_t * find_node(node_t * head, int value) {
   node_t * tmp = head;
   while (tmp != NULL) {
@@ -46,15 +58,18 @@ node_t * find_node(node_t * head, int value) {
 
 
 int main(int argc, const char ** argv) {
-  node_t * head;
-  node_t * tmp;
+  node_t * head = create_new_node(0);
+  // node_t * tmp;
 
-  for(int i = 0; i <= 50; i++) {
-    tmp = create_new_node(i);
-    insert_at_head(&head, tmp);
+  for(int i = 1; i <= 50; i++) {
+    add_node(head, create_new_node(i));
   }
 
-  node_t * found = find_node(head, 44);
+  print_linked_list(head);
+
+  node_t * found = find_node(head, 25);
+
+  printf("(%p) %d - [ node found ]\n\n", found, found->value);
 
   printf("(%p) %d - found\n", found, found->value);
 
