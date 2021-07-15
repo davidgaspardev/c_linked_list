@@ -47,6 +47,11 @@ void add_node(node_t * head, node_t * new_node) {
   }
 }
 
+void insert_after_node(node_t * node, node_t * new_node) {
+  new_node->next = node->next;
+  node->next = new_node;
+}
+
 node_t * find_node(node_t * head, int value) {
   node_t * tmp = head;
   while (tmp != NULL) {
@@ -71,7 +76,7 @@ int main(int argc, const char ** argv) {
 
   printf("(%p) %d - [ node found ]\n\n", found, found->value);
 
-  printf("(%p) %d - found\n", found, found->value);
+  insert_after_node(found, create_new_node(32));
 
   print_linked_list(head);
 
