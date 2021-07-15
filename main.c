@@ -16,7 +16,7 @@ void print_linked_list(node_t * head) {
   node_t * tmp = head;
   while (tmp != NULL) {
     /* code */
-    printf("%d - ", tmp->value);
+    printf("(%p) %d\n", tmp, tmp->value);
     tmp = tmp->next;
   }
   printf("\n");
