@@ -42,7 +42,9 @@ void insert_user_at_head(user_t ** head, user_t * new_user) {
     *head = new_user;
 }
 
-void print_user_linked_list(user_t * head) {
+void print_users_by_head(user_t * head) {
+    printf("\n========== Print users by TAIL ==========\n");
+
     user_t * tmp = head;
     while (tmp != NULL) {
         
@@ -50,7 +52,7 @@ void print_user_linked_list(user_t * head) {
         printf("\n- [ %p | %p ] fullname: %s", tmp, &tmp->fullname,tmp->fullname);
         printf("\n- [ %p | %p ] phone: %lu", tmp, &tmp->phone, tmp->phone);
         printf("\n- [ %p | %p ] birthdate (timestamp): %lu", tmp, &tmp->birthdate, tmp->birthdate);
-        if(tmp->previous != NULL) 
+        if(tmp->previous != NULL)
         printf("\n- [ %p | %p ] previous: %p", tmp, &tmp->previous, tmp->previous);
         if(tmp->next != NULL)
         printf("\n- [ %p | %p ] next: %p", tmp, &tmp->next, tmp->next);
