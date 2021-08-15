@@ -18,10 +18,14 @@ typedef struct user {
 /**
  * Create a user in the memory stack.
  */
-user_t * create_new_user(user_t user) {
+user_t * create_new_user(char * nickname, char * fullname, unsigned long int phone, unsigned long int birthdate) {
     user_t * new_user = malloc(sizeof(user_t));
-    *new_user = user;
+    // *new_user = user;
 
+    new_user->nickname = nickname;
+    new_user->fullname = fullname;
+    new_user->phone = phone;
+    new_user->birthdate = birthdate;
     (*new_user).next = NULL;
     (*new_user).next = NULL;
 
