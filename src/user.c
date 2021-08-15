@@ -66,4 +66,29 @@ void print_users_by_head(user_t * head) {
     printf("\n");
 }
 
+void print_users_by_tail(user_t * tail) {
+    printf("\n========== Print users by TAIL ==========\n");
+
+    user_t * tmp = tail;
+    while (tmp != NULL) {
+
+        printf("\n- [ %p | %p ] nickname: %s", tmp, &tmp->nickname, tmp->nickname);
+        printf("\n- [ %p | %p ] fullname: %s", tmp, &tmp->fullname,tmp->fullname);
+        printf("\n- [ %p | %p ] phone: %lu", tmp, &tmp->phone, tmp->phone);
+        printf("\n- [ %p | %p ] birthdate (timestamp): %lu", tmp, &tmp->birthdate, tmp->birthdate);
+        if(tmp->previous != NULL)
+        printf("\n- [ %p | %p ] previous: %p", tmp, &tmp->previous, tmp->previous);
+        if(tmp->next != NULL)
+        printf("\n- [ %p | %p ] next: %p", tmp, &tmp->next, tmp->next);
+
+        // Break line between users
+        printf("\n");
+
+        // Break line between users
+        printf("\n");
+
+        tmp = tmp->previous;
+    }
+}
+
 #endif
